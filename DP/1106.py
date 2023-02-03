@@ -1,18 +1,10 @@
-C, N = map(int, input().split())
+import sys
 
-dp = [100001] * (C+100)
-
-dp[0] = 0
-
-arr = []
-
+C, N = map(int, sys.stdin.readline().split())
+INF = 100*1000
+dp = [0] + [INF] * (C+100)
 for i in range(N):
-    arr.append(list(map(int, input().split())))
-
-for i in range(1, C+100):
-    for a in arr:
-        if a[1] <= i:
-            for j in range(i-a[1], i+1):
-                dp[i] = min(dp[i], dp[j]+a[0])
-
+    a, b = map(int, sys.stdin.readline().split())
+    for j in range(b, C+b):
+        dp[j] = min(dp[j], dp[j-b]+a)
 print(min(dp[C:]))

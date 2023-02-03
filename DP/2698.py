@@ -8,15 +8,13 @@ for i in range(1, 101):
         dp[i][j][0] = dp[i-1][j][0] + dp[i-1][j][1]
         dp[i][j][1] = dp[i-1][j][0] + dp[i-1][j-1][1]
 
-ans = []
+
 T = int(sys.stdin.readline())
 
 for _ in range(T):
     n, k = map(int, sys.stdin.readline().split())
-    ans.append(dp[n][k][0]+dp[n][k][1])
+    print(dp[n][k][0]+dp[n][k][1])
 
-for an in ans:
-    print(an)
 '''
 dp[n][k][0] = dp[n-1][k][0] + dp[n-1][k][1]
 if k==0:
