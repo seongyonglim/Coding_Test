@@ -14,3 +14,8 @@ for i in range(1, k+1):
         dp[i] = -1
 
 print(dp[k])
+
+
+s = 'hi my name is seongyonglim'
+
+s.split(' ')
